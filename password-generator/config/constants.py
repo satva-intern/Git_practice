@@ -1,0 +1,2 @@
+SPECIAL_CHARS = "!@#$%^&*()"
+DEFAULT_LENGTH = 12
