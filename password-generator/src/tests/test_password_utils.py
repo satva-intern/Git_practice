@@ -1,4 +1,4 @@
-from utils.password_utils import generate_password, check500_password_strength
+from utils.password_utils import generate_password, check_password_strength
 
 def test_generate_password():
     pwd = generate_password()
