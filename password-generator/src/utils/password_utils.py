@@ -1,4 +1,4 @@
-import random
+import secrets
 import string
 from config.constants import SPECIAL_CHARS, DEFAULT_LENGTH
 
@@ -8,24 +8,24 @@ def generate_password(length=DEFAULT_LENGTH, include_upper=True, include_lower=T
     
     if include_upper:
         chars += string.ascii_uppercase
-        password.append(random.choice(string.ascii_uppercase))
+        password.append(secrets.choice(string.ascii_uppercase))
     if include_lower:
         chars += string.ascii_lowercase
-        password.append(random.choice(string.ascii_lowercase))
+        password.append(secrets.choice(string.ascii_lowercase))
     if include_digits:
         chars += string.digits
-        password.append(random.choice(string.digits))
+        password.append(secrets.choice(string.digits))
     if include_special:
         chars += SPECIAL_CHARS
-        password.append(random.choice(SPECIAL_CHARS))
+        password.append(secrets.choice(SPECIAL_CHARS))
 
     if not chars:
         raise ValueError("At least one character type must be selected")
 
     while len(password) < length:
-        password.append(random.choice(chars))
+        password.append(secrets.choice(chars))
     
-    random.shuffle(password)
+    secrets.shuffle(password)
     return "".join(password)
 
 def check_password_strength(pwd):
