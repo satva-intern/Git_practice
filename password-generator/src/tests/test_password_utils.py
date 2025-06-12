@@ -10,5 +10,6 @@ def test_generate_password():
 
 def test_check_password_strength():
     score, (strength, color) = check_password_strength("Aa1!Bb2@Cc3#")
-    assert score >= 4
-    assert strength in ["Very Strong", "Excellent"]
+    assert score == 4
+    assert strength == "Very Strong"
+    assert color == "green"
