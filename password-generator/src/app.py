@@ -38,7 +38,7 @@ if st.session_state.generated_pwd:
     st.code(st.session_state.generated_pwd, language="text")
     
     # Strength indicator
-    progress = st.session_state.score / 5
+    progress = st.session_state.score / 5.0 if st.session_state.score > 0 else 0.0
     st.markdown(f"""
     <style>
         .stProgress > div > div > div {{
